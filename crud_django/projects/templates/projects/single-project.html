@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content%}
+<!--
+<p>Jelly-o ice cream soufflé carrot cake I love I love pastry. Chocolate bar muffin jelly-o chupa chups chocolate bar. Jelly-o marzipan sesame snaps jelly-o muffin marshmallow. Dragée oat cake caramels I love powder muffin cotton candy ice cream I love. Liquorice croissant pastry toffee powder candy sugar plum danish biscuit. Chocolate tootsie roll bonbon wafer jelly-o tiramisu chocolate cake chocolate cake. Pudding sweet cheesecake toffee chocolate bar tootsie roll halvah wafer I love. Muffin shortbread liquorice caramels fruitcake. Liquorice apple pie lollipop chupa chups cake tart.</p>
+<p>Cake wafer jujubes I love I love sweet bear claw. I love wafer donut tootsie roll chupa chups cookie cookie fruitcake. Sesame snaps I love cheesecake fruitcake biscuit. Tootsie roll I love pie brownie tart. Toffee croissant sesame snaps toffee tootsie roll. Lemon drops oat cake I love chocolate cake marshmallow pie I love. I love pastry bonbon jelly-o marshmallow. Bonbon chocolate icing shortbread liquorice marshmallow bonbon. Carrot cake wafer caramels cheesecake chocolate cake cake bonbon I love.</p>
+<p>Sweet jelly beans gummies I love sweet roll soufflé candy. Cake I love candy muffin pie chocolate cupcake jelly cupcake. Dragée I love I love tiramisu pie wafer tart pie cookie. Muffin dragée dragée cheesecake cupcake macaroon toffee dragée. Tiramisu lemon drops pastry donut I love I love. Chocolate sugar plum dragée dragée pie sugar plum halvah. Chocolate cake cheesecake I love sugar plum cupcake lollipop. Danish bear claw tart jujubes toffee chocolate cake. Halvah tootsie roll sesame snaps toffee candy canes. Caramels tootsie roll toffee pudding gummies.</p>
+<hr>
+-->
+<h1>{{project.title}}</h1>
+<h1>{{project.description}}</h1>
+<h3>{% for values in project.tags.all %}
+        <!-- <h3>{{values}}</h3> -->
+        <span style="border: 1px solid grey">{{values}}</span>
+    {% endfor %}
+
+</h3>
+<hr>
+{%endblock content%}

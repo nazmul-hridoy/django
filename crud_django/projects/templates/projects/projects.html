@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        {% comment "Optional note" %}
+        <p>hello, you are on the {{message}} page</p>
+        <h1>Projects</h1>
+        {% if number > 10 %}
+        <p>Number is grater than 10</p>
+        {% elif number == 10 %}
+        <p>NUmber is equal to 10 </p>
+        {% else %}
+        <p>Number is less than 10</p>
+        {%endif%}
+        <hr>
+        {% endcomment %}
+        <h1>PROJECTS</h1>
+        <hr>
+        <table>
+            <tr>
+                
+                <th> PROJECT NAME </th>
+                <th> VOTE </th>
+                <th> POSITIVE VOTES </th>
+                <th> Date </th>
+                <th> </th>
+            </tr>
+            {%for values in lists%}
+            <tr>
+                <td>{{values.title}}</td>
+                <td>{{values.vote_total}}</td>
+                <td>{{values.vote_ratio}}%</td>
+                <td>{{values.created_at}}</td>
+                <td><a href="{% url 'update-project' values.id %}"> Edit </a></td>
+                <td><a href="{% url 'delete-project' values.id %}">Delete</a></td>
+                <td><a href="{% url 'project' values.id %}">See More</a></td>
+
+            </tr>
+            {%endfor%}
+
+        </table>
+        {% comment "Optional note" %}
+        <ul>
+            {%for values in lists%}
+                <!--<li><a href="/project/{{values.id}}">{{values.title}}</a>-----{{values.description}}</li>    #/project comes form path('project/<str:pk>',)-->
+                <li><a href="{% url 'project' values.id %}">{{values.title}}</a>-----{{values.created_at}}</li>
+                
+                   here "{% url 'project'......%}" comes from path('project/<str:pk>', views.project, name="project") name = "project"
+                
+            
+            {%endfor%}
+        </ul>
+        {% endcomment %}
+    {% endblock content %}
+    
+</body>
+</html>

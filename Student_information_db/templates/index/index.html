@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link href="{% static 'static/css/style.css' %}" rel="stylesheet" >
+    <title>index</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+        </tr>
+        {% for value in Students %}
+
+        <tr>
+            <td>{{ value.name }}</td>
+            <td>{{ value.age }}</td>
+            <td>{{ value.dept }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<a href="{%url 'index:form' %}" >Add new</a>
+</body>
+</html>

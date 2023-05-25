@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Project Form</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{addnew_form.as_p}}
+
+   <!-- 
+    {{addnew_form.as_p}}   #{{ .as_p }} will render them wrapped in <p> tags.
+    {{addnew_form.title.label}} show title in writing before the title field
+    {{addnew_form.title}} #only "title" field will be shown
+    {{ form.as_table }} will render them as table cells wrapped in <tr> tags
+    {{ form.as_ul }} will render them wrapped in <li> tags
+    
+    {% for field_values in addnew_form %}
+        {{field_values.label}}
+        {{field_values}}
+    {%endfor%}
+
+    -->
+
+    <input type="submit">
+    
+</form>
+{% endblock content %}
